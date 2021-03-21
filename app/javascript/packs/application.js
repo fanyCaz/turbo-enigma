@@ -11,3 +11,27 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+//
+ import TurbolinksAdapter from 'vue-turbolinks'
+ import Vue from 'vue/dist/vue.esm'
+ import App from '../app.vue'
+ //
+Vue.use(TurbolinksAdapter)
+Vue.component('app', App)
+Vue.component('bind-attribute', AttributeBinding)
+//
+ document.addEventListener('turbolinks:load', () => {
+ 	const app = new Vue({
+ 		el: '[date-behaviour="vue"]',
+		})
+	})
+
+const AttributeBinding = {
+	data(){
+		return {
+			message: "HOllla reloaded"
+		}
+	}
+}
