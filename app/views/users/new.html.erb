@@ -3,4 +3,8 @@
 	<span v-bind:title="message">
 		Holaaaa
 	</span>
+	<%= form_with do |form| %>
+		<%= form.label :name, "Nombre" %>
+		<%= form.text_field :name %>
+		
 </div>
