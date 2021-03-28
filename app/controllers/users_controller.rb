@@ -6,6 +6,9 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
+			#session cookies
+			reset_session
+			log_in @user
 			flash[:success] = "Bienvenidx"
 			redirect_to root_path 
 		else

@@ -1,0 +1,11 @@
+<h1>Iniciar Sesión</h1>
+
+<%= form_with(url: login_path, scope: :session, local: true) do |form| %>
+	<%= form.label :email %>
+	<%= form.email_field :email %>
+	<%= form.label :password %>
+	<%= form.password_field :password %>
+	<%= form.submit "Inicia Sesión" %>
+<% end %>
+
+<p> Entraaaar </p>
