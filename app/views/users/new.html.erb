@@ -1,6 +1,20 @@
-<h1>Para registro</h1>
-<div id="bind-attribute">
-	<span v-bind:title="message">
-		Holaaaa
-	</span>
-</div>
+<h1>Registro</h1>
+<p> <%= @user %> </p>
+<%= form_with model: @user do |form| %>
+	<% if @user.errors.any? %>
+		<div>
+			<% @user.errors.full_messages.each do |msgs| %>
+				<div> <%= msgs %>
+			<% end %>
+		</div>
+		<% end %>
+	<%= form.label :email, "Correo electrónico" %>
+		<%= form.text_field :email %>
+	<%= form.label :username, "Nombre de usuario" %>
+		<%= form.text_field :username %>
+	<%= form.label :password, "Contraseña" %>
+		<%= form.password_field :password %>
+	<%= form.label :password_confirmation, "Confirma tu contraseña" %>
+		<%= form.password_field :password_confirmation %>
+		<%= form.submit "Registrate" %> 
+<% end %>

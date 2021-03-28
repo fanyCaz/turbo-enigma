@@ -6,8 +6,13 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			redirect_to root_path
+			#session cookies
+			reset_session
+			log_in @user
+			flash[:success] = "Bienvenidx"
+			redirect_to root_path 
 		else
+			flash[:alert] = "Ha ocurrido un error"
 			render 'new'
 		end
 	end
@@ -15,6 +20,11 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:email, :password, :password_confirmation)
+		params.require(:user).permit(
+			:username,
+			:email,
+			:password,
+			:password_confirmation
+		)
 	end
 end
