@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'book/index'
+  get 'book/new'
+  get 'book/create'
+  get 'book/show'
+  get 'book/edit'
+  get 'book/update'
+  get 'book/destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 	get 'sessions/new'
 	get 'users/new'
