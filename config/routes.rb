@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-	get 'sessions/new'
-	get 'users/new'
 
 	root "statics#index"
 	# this get goes to controller#action
 	# STATICS
 	get "/sobre-esto", to: "statics#about"
+	get 'sessions/new'
+	get 'users/new'
 
 	# USERS
 	get "/registro", to: "users#new"

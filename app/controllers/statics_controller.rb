@@ -5,9 +5,6 @@ class StaticsController < ApplicationController
 		end
 	end
 
-	def show
-	end
-
 	def about
 	end
 end
