@@ -35,3 +35,5 @@ const AttributeBinding = {
 		}
 	}
 }
+
+import "stylesheets/application"
