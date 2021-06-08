@@ -16,5 +16,6 @@ Rails.application.routes.draw do
 	
 	# RESOURCES
 	resources :users
+	resources :book
 
 end
