@@ -1,6 +1,13 @@
 <h1>Iniciar Sesión</h1>
 
 <%= form_with(url: login_path, scope: :session, local: true) do |form| %>
+	<% if @user.errors.any? %>
+		<div>
+			<% @user.errors.full_messages.each do |msgs| %>
+				<div> <%= msgs %>
+			<% end %>
+		</div>
+	<% end %>
 	<%= form.label :email %>
 	<%= form.email_field :email %>
 	<%= form.label :password %>
