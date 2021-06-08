@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 	def new
+		#creates an instance of the variable in memory
+		#when is with '@' is available in the view
 		@user = User.new
 	end
 

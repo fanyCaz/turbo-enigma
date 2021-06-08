@@ -1,20 +1,53 @@
-<h1>Registro</h1>
-<p> <%= @user %> </p>
-<%= form_with model: @user do |form| %>
-	<% if @user.errors.any? %>
-		<div>
-			<% @user.errors.full_messages.each do |msgs| %>
-				<div> <%= msgs %>
+<div class='container m-8 place-items-center'>
+	<p> <%= @user.username %> </p>
+	<div class='flex rounded-md bg-red-50'>
+		<div class='w-2/5 p-1'>
+			<%= image_tag 'fairytale_fairy.jpeg', size: '400x300' %>
+		</div>
+		<div class='w-3/5'>
+			<p class='font-bold text-lg my-4'> Registro</p>
+			<%= form_with model: @user do |form| %>
+				<% if @user.errors.any? %>
+					<div>
+						<% @user.errors.full_messages.each do |msgs| %>
+							<div> <%= msgs %>
+						<% end %>
+					</div>
+				<% end %>
+				<div class='flex'>
+					<div class='w-1/2 my-2'>
+						<%= form.label :email, "Correo electrónico", class:'' %>
+					</div>
+					<div class='w-1/2 my-2'>
+						<%= form.label :username, "Nombre de usuario" %>
+					</div>
+				</div>
+				<div class='flex'>
+					<div class='w-1/2 '>
+						<%= form.text_field :email, class:'rounded-md border border-solid border-red-200' %>
+					</div>
+					<div class='w-1/2 '>
+						<%= form.text_field :username, class:'rounded-md border border-solid border-red-200' %>
+					</div>
+				</div>
+				<div class='flex'>
+					<div class='w-1/2 my-2'>
+						<%= form.label :password, "Contraseña" %>
+					</div>
+					<div class='w-1/2 my-2'>
+						<%= form.label :password_confirmation, "Confirma tu contraseña" %>
+					</div>
+				</div>
+				<div class='flex'>
+					<div class='w-1/2'>
+						<%= form.password_field :password, class:'rounded-md border border-solid border-red-200' %>
+					</div>
+					<div class='w-1/2'>
+						<%= form.password_field :password_confirmation, class:'rounded-md border border-solid border-red-200' %>
+					</div>
+				</div>
+				<%= form.submit "Registrate", class:'self-end mb-0 text-white rounded-md bg-pink-300 p-2 mt-4 w-full' %> 
 			<% end %>
 		</div>
-		<% end %>
-	<%= form.label :email, "Correo electrónico" %>
-		<%= form.text_field :email %>
-	<%= form.label :username, "Nombre de usuario" %>
-		<%= form.text_field :username %>
-	<%= form.label :password, "Contraseña" %>
-		<%= form.password_field :password %>
-	<%= form.label :password_confirmation, "Confirma tu contraseña" %>
-		<%= form.password_field :password_confirmation %>
-		<%= form.submit "Registrate" %> 
-<% end %>
+	</div>
+</div>
