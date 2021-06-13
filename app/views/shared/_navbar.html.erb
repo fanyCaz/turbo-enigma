@@ -1,4 +1,10 @@
 <nav class="m-0 py-4 px-2 bg-blue-300 rounded-b-lg">
-	<%= link_to "TURBO ENIGMA 💖", root_path, class: "text-white mr-2 font-bold inline-block" %>
-	<%= link_to "Sobre Esto", sobre_esto_path, class: "text-white font-bold inline-block" %>
+  <%= link_to "TURBO ENIGMA 💖", root_path, class: "text-white mr-2 font-bold inline-block" %>
+  <%= link_to "Sobre Esto", sobre_esto_path, class: "text-white font-bold inline-block" %>
+  <% if logged_in? %>
+  	<%= button_to "Salir", logout_path, method: :delete %>
+  <% else %>
+    <%= link_to "Registrate", registro_path, class: "text-white font-bold inline-block" %>
+    <%= link_to "Inicia Sesión", login_path, class: "text-white font-bold inline-block" %>
+  <% end %>
 </nav>

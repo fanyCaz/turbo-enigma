@@ -1,35 +1,12 @@
 <div class='container m-8 place-items-center'>
-	<p> <%= @user.username %> </p>
+	<p> <%= current_user.username %> </p>
 	<div class='flex rounded-md bg-red-50'>
 		<div class='w-2/5 p-1'>
 			<%= image_tag 'fairytale_fairy.jpeg', size: '400x300' %>
 		</div>
 		<div class='w-3/5'>
-			<p class='font-bold text-lg my-4'> Registro</p>
-			<%= form_with model: @user do |form| %>
-				<% if @user.errors.any? %>
-					<div>
-						<% @user.errors.full_messages.each do |msgs| %>
-              <div> <%= msgs %> </div>
-            <% end %>
-          </div>
-        <% end %>
-				<div class='flex'>
-					<div class='w-1/2 my-2'>
-						<%= form.label :email, "Correo electrónico", class:'' %>
-					</div>
-					<div class='w-1/2 my-2'>
-						<%= form.label :username, "Nombre de usuario" %>
-					</div>
-				</div>
-				<div class='flex'>
-					<div class='w-1/2 '>
-						<%= form.text_field :email, class:'rounded-md border border-solid border-red-200' %>
-					</div>
-					<div class='w-1/2 '>
-						<%= form.text_field :username, class:'rounded-md border border-solid border-red-200' %>
-					</div>
-				</div>
+			<p class='font-bold text-lg my-4'> Cambiar contraseña</p>
+			<%= form_with model: current_user do |form| %>
 				<div class='flex'>
 					<div class='w-1/2 my-2'>
 						<%= form.label :password, "Contraseña" %>

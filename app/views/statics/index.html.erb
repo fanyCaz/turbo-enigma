@@ -1,6 +1,5 @@
 <h1>Holi</h1>
 <% if logged_in? %>
-	<p> <%= current_user %>
+  <p> <%= current_user.email %> </p>
 	Hola : <%= @user.username %>
-	<%= button_to "Salir", logout_path, method: :delete %>
 <% end %>

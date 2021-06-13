@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 	get "/login", to: "sessions#new"
 	post "/login", to: "sessions#create"
 	delete "/logout", to: "sessions#destroy"
+  get "/password", to: "passwords#edit", as: :edit_password
+  patch "/password", to: "passwords#update"
 	
 	# RESOURCES
 	resources :users
