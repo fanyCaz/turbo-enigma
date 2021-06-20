@@ -6,7 +6,15 @@
 		</div>
 		<div class='w-3/5'>
 			<p class='font-bold text-lg my-4'> Cambiar contraseña</p>
-			<%= form_with model: current_user do |form| %>
+			<%= form_with model: current_user, url: password_path do |form| %>
+				<% if form.object.errors.any? %>
+					<div class="alert alert-danger">
+						<% form.object.errors.full_messages.each do |message| %>
+							<div><%= message %></div>
+						<% end %>
+					</div>
+				<% end %>
+
 				<div class='flex'>
 					<div class='w-1/2 my-2'>
 						<%= form.label :password, "Contraseña" %>
@@ -23,7 +31,7 @@
 						<%= form.password_field :password_confirmation, class:'rounded-md border border-solid border-red-200' %>
 					</div>
 				</div>
-        <%= form.submit "Registrate", class:'self-end mb-0 text-white rounded-md bg-pink-300 p-2 mt-4 w-full' %> 
+    <%= form.submit "Cambia la contraseña", class:'self-end mb-0 text-white rounded-md bg-pink-300 p-2 mt-4 w-full' %> 
 			<% end %>
 		</div>
 	</div>

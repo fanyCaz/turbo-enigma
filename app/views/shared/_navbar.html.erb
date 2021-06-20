@@ -3,6 +3,7 @@
   <%= link_to "Sobre Esto", sobre_esto_path, class: "text-white font-bold inline-block" %>
   <% if logged_in? %>
   	<%= button_to "Salir", logout_path, method: :delete %>
+    <%= link_to "Cambia contraseña", edit_password_path, class: "text-white font-bold" %>
   <% else %>
     <%= link_to "Registrate", registro_path, class: "text-white font-bold inline-block" %>
     <%= link_to "Inicia Sesión", login_path, class: "text-white font-bold inline-block" %>

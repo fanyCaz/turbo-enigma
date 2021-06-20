@@ -24,7 +24,7 @@ module SessionsHelper
 	end
 
   def require_user_logged_in!
-    redirect_to login_path, alert: "Debes estar registrado"
+    redirect_to login_path, alert: "Debes estar dentro de la aplicación" if current_user.nil?
   end
 
 end
