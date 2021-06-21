@@ -10,15 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_193659) do
+ActiveRecord::Schema.define(version: 2021_06_21_022752) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "year"
     t.string "author"
-    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "pages"
+  end
+
+  create_table "readings", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean "currently_reading"
+    t.integer "grade"
     t.text "review"
-    t.integer "degree_of_truth"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
