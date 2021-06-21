@@ -1,4 +1,4 @@
-class BookController < ApplicationController
+class BooksController < ApplicationController
 	def index
 		@books = Book.all()
 	end
@@ -27,9 +27,8 @@ class BookController < ApplicationController
 			:title,
 			:year,
 			:author,
-			:status,
-			:review,
-			:degree_of_truth)
+      :pages
+    )
 	end
 
 end

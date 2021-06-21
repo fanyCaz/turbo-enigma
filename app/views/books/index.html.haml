@@ -1,0 +1,6 @@
+.container.m-8.text-center
+  %p{:class => "text-xl"} ¿Ya existe en Turbo Enigma?
+  .m-4
+    %input{:class => "rounded-md border border-solid border-red-200"} Buscar
+  .bg-indigo-200
+    = link_to "No se encuentra aquí", new_book_path, class: "text-white no-underline"

@@ -1,0 +1,11 @@
+.container.m-8
+  = form_with model: @book do |f|
+    = f.label :title, "Título"
+    = f.text_field :title, class: "border rounded-md border-black"
+    = f.label :year, "Año de publicación"
+    = f.number_field :year, class: "border rounded-md border-black"
+    = f.label :author, "Autor"
+    = f.text_field :author, class: "border rounded-md border-black"
+    = f.label :pages, "No de páginas"
+    = f.number_field :pages, class: "border rounded-md border-black"
+    = f.submit "Guardar"
